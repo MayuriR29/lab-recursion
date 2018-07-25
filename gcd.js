@@ -1,13 +1,9 @@
-const gcd = (num1, num2) => {
-  var rem;
+const greatestCommonDivisor = (num1, num2) => {
+  const remainder = num1 % num2;
   if (num1 === num2) return null;
 
-  if (num1 % num2 === 0) return num2;
-  else {
-    rem = num1 % num2;
-    if (rem !== 0) {
-      return gcd(num2, rem);
-    }
-  }
+  if (remainder === 0) return num2;
+
+  return greatestCommonDivisor(num2, remainder);
 };
-module.exports = gcd;
+module.exports = greatestCommonDivisor;
