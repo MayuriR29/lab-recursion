@@ -17,6 +17,7 @@ const selectionSort = array => {
   minIndex = getMinIndex(array); //[ 7, 2, 8, 10 ]//2,8,10
   swappedArray = swap(array, 0, minIndex);
   sortedArray.push(swappedArray[0]);
+  console.log('sortedArray',sortedArray);
   return sortedArray.concat(selectionSort(swappedArray.slice(1)));
 };
 module.exports = selectionSort;
